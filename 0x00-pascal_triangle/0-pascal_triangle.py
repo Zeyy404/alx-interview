@@ -19,7 +19,7 @@ def pascal_triangle(n):
             value = triangle[i-1][j-1] + triangle[i-1][j]
             new_row.append(value)
 
-    new_row.append(1)
-    triangle.append(new_row)
+        new_row.append(1)
+        triangle.append(new_row)
 
     return triangle
