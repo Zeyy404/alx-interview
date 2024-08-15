@@ -10,11 +10,11 @@ def canUnlockAll(boxes):
     numOfBoxes = len(boxes)
     unlockedBoxes = {0}
     toExplore = deque([0])
-    
+
     while toExplore:
         current_box = toExplore.popleft()
         keys = boxes[current_box]
-        
+
         for key in keys:
             if key not in unlockedBoxes and key < numOfBoxes:
                 unlockedBoxes.add(key)
