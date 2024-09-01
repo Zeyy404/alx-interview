@@ -18,12 +18,13 @@ try:
         match = LOG_PATTERN.match(line)
         if match:
             status_code, file_size = match.groups()
+            file_size = int(file_size)
             if status_code in {'200', '301', '400', '401',
                                '403', '404', '405', '500'}:
-                total_size += int(file_size)
                 status_counts[status_code] += 1
 
-        line_count += 1
+            total_size += file_size
+            line_count += 1
 
         if line_count % 10 == 0:
             print(f"File size: {total_size}")
