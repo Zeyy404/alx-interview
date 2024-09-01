@@ -26,14 +26,14 @@ try:
         line_count += 1
 
         if line_count % 10 == 0:
-            print(f"Total file size: {total_size}")
+            print(f"File size: {total_size}")
             for code in sorted(status_counts):
                 count = status_counts[code]
                 if count > 0:
                     print(f"{code}: {count}")
 
 except KeyboardInterrupt:
-    print(f"Total file size: {total_size}")
+    print(f"File size: {total_size}")
     for code in sorted(status_counts):
         count = status_counts[code]
         if count > 0:
