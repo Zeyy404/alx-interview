@@ -13,6 +13,7 @@ total_size = 0
 status_counts = defaultdict(int)
 line_count = 0
 
+
 try:
     for line in sys.stdin:
         match = LOG_PATTERN.match(line)
@@ -33,7 +34,10 @@ try:
                 if count > 0:
                     print(f"{code}: {count}")
 
-except KeyboardInterrupt:
+except Exception as e:
+    pass
+
+finally:
     print(f"File size: {total_size}")
     for code in sorted(status_counts):
         count = status_counts[code]
