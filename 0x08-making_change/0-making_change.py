@@ -21,8 +21,8 @@ def makeChange(coins, total):
         if total < max_coin:
             coins.remove(max_coin)
         num_coins += 1
-        
+
         if not coins:
-            return -1 
+            return -1
         elif total == 0:
             return num_coins
