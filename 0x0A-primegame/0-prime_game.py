@@ -19,8 +19,8 @@ def sieve_of_eratosthenes(max_num):
 
 def isWinner(x, nums):
     """Returns: name of the player that won the most rounds"""
-    if ((not isinstance(x, int) or not isinstance(nums, list)
-         or x <= 0 or len(nums) == 0)):
+    if (not isinstance(x, int) or not isinstance(nums, list)
+        or x <= 0 or len(nums) == 0):
         return None
 
     max_n = max(nums)
@@ -52,5 +52,5 @@ def isWinner(x, nums):
         return "Maria"
     elif player2_wins > player1_wins:
         return "Ben"
-    else:
+    elif player1_wins == player2_wins:
         return None
