@@ -12,12 +12,12 @@ def isWinner(x, nums):
         is_prime = [True] * (max_num + 1)
         p = 2
         while (p * p <= max_num):
-            if (is_prime[p] == True):
+            if (is_prime[p] is True):
                 for i in range(p * p, max_num + 1, p):
                     is_prime[i] = False
             p += 1
         return [p for p in range(2, max_num + 1) if is_prime[p]]
-    
+
     max_n = max(nums)
     primes = sieve_of_eratosthenes(max_n)
 
@@ -36,7 +36,7 @@ def isWinner(x, nums):
                 else:
                     maria_wins += 1
                 break
-            
+
             chosen_prime = avail_primes[0]
             curr_set.remove(chosen_prime)
             for multiple in range(chosen_prime, n + 1, chosen_prime):
