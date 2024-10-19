@@ -22,6 +22,9 @@ def precompute_winner(max_n):
     Precompute the number of moves for each n
     and store the winner for each game.
     """
+    if max_n < 2:
+        return ["Ben"] * (max_n + 1)
+
     primes = sieve_of_eratosthenes(max_n)
     winners = [None] * (max_n + 1)
     moves = [0] * (max_n + 1)
@@ -43,7 +46,8 @@ def isWinner(x, nums):
     """Returns: name of the player that won the most rounds"""
     if (not isinstance(x, int) or
             not isinstance(nums, list) or
-            x <= 0 or len(nums) == 0):
+            x <= 0 or len(nums) == 0 or
+            any(not isinstance(n, int) or n <= 0 for n in nums)):
         return None
 
     max_n = max(nums)
