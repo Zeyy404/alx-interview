@@ -35,7 +35,7 @@ def precompute_winner(max_n):
             winners[n] = "Ben"
         else:
             winners[n] = "Maria"
-    
+
     return winners
 
 
