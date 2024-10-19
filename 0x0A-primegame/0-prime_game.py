@@ -46,8 +46,7 @@ def isWinner(x, nums):
     """Returns: name of the player that won the most rounds"""
     if (not isinstance(x, int) or
             not isinstance(nums, list) or
-            x <= 0 or len(nums) == 0 or
-            any(not isinstance(n, int) or n <= 0 for n in nums)):
+            x <= 0 or len(nums) == 0):
         return None
 
     max_n = max(nums)
